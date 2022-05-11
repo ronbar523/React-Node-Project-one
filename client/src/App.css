@@ -1,0 +1,117 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+
+.bg-myColor {
+  background-color: navy;
+}
+
+.lin {
+  color: white;
+  text-decoration: none;
+}
+
+.lin:hover {
+  color: rgb(175, 218, 255);
+}
+
+.active {
+  color: rgb(175, 218, 255);
+}
+
+.main {
+  min-height: 95vh;
+}
+
+.error {
+  color: black;
+  text-decoration: none;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Home page */
+
+.container-home-a {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.container-home-b {
+  background-color: #e6ddce;
+  height: 22rem;
+}
+
+.img-home {
+  width: 100%;
+  height: 22rem;
+}
+
+.subtitle-home-a {
+  text-align: center;
+  margin-top: 2%;
+  font-size: 4rem;
+}
+
+.subtitle-home-b {
+  text-align: center;
+  margin-top: 0.5%;
+  font-size: 4rem;
+}
+
+.btn-home {
+  background-color: #f8a888;
+}
+
+.btn-home-div {
+  text-align: center;
+}
+
+/* About-Page */
+
+.about-p {
+  font-size: 1.1rem;
+}
+
+.container-about-b {
+  text-align: center;
+  margin-top: 10%;
+}
+
+.img-about {
+  width: 350px;
+}
+
+/* Footer */
+
+.container-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.img-footer {
+  width: 90px;
+  display: inline;
+}
+
+.pieces-stock {
+  padding-left: 50%;
+}
+
+.pieces-out {
+  padding-left: 40%;
+}
+
+.option-select {
+  font-size: 13px;
+}
