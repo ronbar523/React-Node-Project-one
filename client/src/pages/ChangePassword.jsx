@@ -5,31 +5,40 @@ import PageHeader from "../components/Header/PageHeader";
 import { Navigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-import { getCurrentUser, restPassword } from "../service/userService";
+import { getCurrentUser, newPassword } from "../service/userService";
 
 class RestPassword extends Form {
   state = {
     data: {
-      email: "",
+      password: "",
     },
     errors: {},
   };
 
   schema = {
-    email: Joi.string().required().email().label("Email"),
+    password: Joi.string()
+      .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]+4)(?=.*[!@#$%^&*])(?=.{8,})/)
+      .required()
+      .min(8)
+      .max(30),
   };
 
   doSubmit = async () => {
     try {
-      const { email } = this.state.data;
-      await restPassword(email);
-      toast.success(`Sent you Mail`);
-      window.location = "/";
+      const { password } = this.state.data;
+      let email = window.location.search.split("email=")[1];
+      if (window.location.search && email) {
+        await newPassword(email, password);
+        window.location = "/";
+        toast.success(`password changed`);
+      }
     } catch (error) {
-      if (error.response && error.response.status === 400)
+      if (error.response && error.response.status === 400) {
+        console.log("err");
         this.setState({
-          errors: { email: "Invalid email" },
+          errors: { password: "" },
         });
+      }
     }
   };
 
@@ -42,7 +51,7 @@ class RestPassword extends Form {
         className="container-fluid bg-light pb-4"
       >
         <div className="container">
-          <PageHeader title="Login" />
+          <PageHeader title="Change Password" />
           <div className="center">
             <form
               onSubmit={this.handleSubmit}
@@ -50,8 +59,8 @@ class RestPassword extends Form {
               method="POST"
               className="col-12 col-md-10 col-xl-6 border p-2 bg-white"
             >
-              {this.renderInput("email", "Email", "email")}
-              {this.renderButton("Send Mail")}
+              {this.renderInput("password", "Password:", "password")}
+              {this.renderButton("Change Password")}
             </form>
           </div>
         </div>

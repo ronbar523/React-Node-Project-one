@@ -99,35 +99,24 @@ const createUser = (
 const findUserByEmail = (email) => {
   return User.find({ email: email });
 };
-
-// function getUser(email) {
-//   const thisUser = User.find((user) => user.email === email);
-//   return thisUser;
-// }
-
-// function updateUser(user) {
-//   const thisUserIndex = User.findIndex((local) => local.email === user.email);
-//   User[thisUserIndex] = user;
-// }
-
-// const requests = [];
-
-// function createResetRequest(resetRequest) {
-//   requests.push(resetRequest);
-// }
-
-// function getResetRequest(id) {
-//   const thisRequest = requests.find((req) => req.id === id);
-//   return thisRequest;
-// }
+const updateUserPassword = async (email, newPass) => {
+  return await new Promise((success, failure) => {
+    try {
+      User.findOneAndUpdate({ email: email }, { password: newPass })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((e) => console.log(e));
+      success("Successfully changed pass");
+    } catch (e) {
+      failure(e);
+    }
+  });
+};
 
 module.exports = {
   createUser,
   findUserByEmail,
   User,
-  //   getUser,
-  //   updateUser,
-  //   createResetRequest,
-  //   getResetRequest,
-  // };
+  updateUserPassword,
 };

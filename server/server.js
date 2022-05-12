@@ -3,6 +3,7 @@ const cors = require("cors");
 const app = express();
 const mongoose = require("mongoose");
 const logger = require("morgan");
+require("dotenv").config();
 
 app.use(logger("dev"));
 app.use(cors());

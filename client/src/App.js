@@ -3,7 +3,6 @@ import "react-toastify/dist/ReactToastify.css";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-// import { getMyProduct } from "./service/productService";
 import { getCurrentUser } from "./service/userService";
 
 import Header from "./components/Header/Header";
@@ -18,6 +17,7 @@ import SingUp from "./pages/SingUp";
 import Logout from "./pages/Logout";
 import SingUpBiz from "./pages/SingUpBiz";
 import RestPassword from "./pages/RestPassword";
+import ChangePassword from "./pages/ChangePassword";
 
 import Reviews from "./pages/Reviews";
 import ReviewsFrom from "./pages/ReviewsFrom";
@@ -77,6 +77,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="login/rest_password" element={<RestPassword />} />
+          <Route path="change_password" element={<ChangePassword />} />
 
           <Route path="*" element={<Error />} />
 

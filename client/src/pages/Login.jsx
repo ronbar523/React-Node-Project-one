@@ -18,7 +18,7 @@ class Login extends Form {
 
   schema = {
     email: Joi.string().required().email().label("Email"),
-    password: Joi.string().required().min(6).label("Password"),
+    password: Joi.string().required().min(8).label("Password"),
   };
 
   doSubmit = async () => {

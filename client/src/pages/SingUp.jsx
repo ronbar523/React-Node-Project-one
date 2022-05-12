@@ -41,7 +41,11 @@ class SingUp extends Form {
     state: defaultSetting,
     city: defaultSetting,
     address: defaultSetting,
-    password: Joi.string().required().min(8),
+    password: Joi.string()
+      .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]+4)(?=.*[!@#$%^&*])(?=.{8,})/)
+      .required()
+      .min(8)
+      .max(30),
   };
 
   doSubmit = async () => {
@@ -97,7 +101,7 @@ class SingUp extends Form {
               {this.renderInput("city", "City:")}
               {this.renderInput("address", "Address:")}
               {this.renderInput("password", "Password:", "password")}
-              {this.renderButton("Sign Up")}
+              {this.renderButton("Sing Up")}
             </form>
           </div>
         </div>

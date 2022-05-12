@@ -29,3 +29,9 @@ export const logout = () => {
   localStorage.removeItem("token");
   return (window.location = "/");
 };
+
+export const restPassword = (email) =>
+  http.get(`${URL}/user/rest?email=` + email);
+
+export const newPassword = (email, newPass) =>
+  http.post(`${URL}/user/rest?email=${email}&newPass=${newPass}`);

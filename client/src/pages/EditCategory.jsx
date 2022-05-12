@@ -70,9 +70,9 @@ class EditCategory extends Form {
 
     if (isCategoryEdit) return <Navigate replace to="/shop" />;
 
-    const isAdmin = this.props.user?.isAdmin;
+    // const isAdmin = this.props.user?.isAdmin;
 
-    if (!isAdmin) return <Navigate replace to="/shop" />;
+    // if (!isAdmin) return <Navigate replace to="/shop" />;
 
     return (
       <div

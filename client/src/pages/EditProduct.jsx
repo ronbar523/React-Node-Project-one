@@ -79,9 +79,9 @@ class EditProduct extends Form {
 
     if (isProductEdit) return <Navigate replace to="/my_products" />;
 
-    const biz = this.props.user?.biz;
-    const isAdmin = this.props.user?.isAdmin;
-    if (!biz && !isAdmin) return <Navigate replace to="/shop" />;
+    // const biz = this.props.user?.biz;
+    // const isAdmin = this.props.user?.isAdmin;
+    // if (!biz && !isAdmin) return <Navigate replace to="/shop" />;
     return (
       <div
         style={{ minHeight: "85vh" }}

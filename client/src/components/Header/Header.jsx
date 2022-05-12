@@ -77,7 +77,7 @@ const Header = ({ user }) => {
                     aria-current="page"
                     to="/sing_up"
                   >
-                    Sing Up
+                    Sign Up
                   </NavLink>
                 </li>
                 <li className="nav-item">
@@ -86,7 +86,7 @@ const Header = ({ user }) => {
                     aria-current="page"
                     to="/sing_up_biz"
                   >
-                    Sing Up Business
+                    Sign Up Business
                   </NavLink>
                 </li>
                 <li className="nav-item">

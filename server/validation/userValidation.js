@@ -30,7 +30,7 @@ const registerSkeleton = {
   address: joi.string().min(1).max(30).required(),
   password: joi
     .string()
-    .min(6)
+    .min(8)
     .max(30)
     .pattern(
       new RegExp(
